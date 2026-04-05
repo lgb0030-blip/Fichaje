@@ -4,8 +4,7 @@ public class Entrenador {
     private String formacionPreferida;
 
     private static int totalEntrenadores = 0;
-    totalEntrenadores++;
-
+   
 /***
  * Constructor de la clase entrenador.
  * 
@@ -16,6 +15,8 @@ public class Entrenador {
 public Entrenador(String nombre, String formacionPreferida) {
     this.nombre = nombre;
     this.formacionPreferida = formacionPreferida;
+     totalEntrenadores++;
+
 }
 
 public String getNombre() {
