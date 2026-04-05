@@ -13,6 +13,8 @@ public class Equipo {
      */
     public Equipo(String nombre) {
         this.nombre = nombre;
+        this.entrenador = null;
+        this.jugadores = new ArrayList<Jugador>();
     }
 
     public String getNombre() {
@@ -26,5 +28,14 @@ public class Equipo {
     @Override
     public String toString() {
         return "Equipo: " + nombre;
+    }
+
+    public void añadirJugador(Jugador j) {
+        jugadores.add(j);
+
+    }
+
+    public void setEntrenador(Entrenador entrenador) {
+        this.entrenador = entrenador;
     }
 }
