@@ -23,7 +23,11 @@ public class Main {
         Equipo eq2 = new Equipo("Leones United");
         Equipo eq3 = new Equipo("Nacional NC");
 
-        //asignar entrenadores 
+       // Probar toString - Ejercicio 3
+        System.out.println(j1);
+        System.out.println(j2);
+        System.out.println(e1);
+        System.out.println(eq1);
         
 
 
