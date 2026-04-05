@@ -28,6 +28,9 @@ public class Main {
         System.out.println(j2);
         System.out.println(e1);
         System.out.println(eq1);
+
+        j1.solicitarTraspaso();
+        j1.cancelarTraspaso();
         
 
 

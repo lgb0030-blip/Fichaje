@@ -22,6 +22,7 @@ public Jugador(String nombre, LocalDate fechaNacimiento, String posicion) {
     this.fechaNacimiento = fechaNacimiento;
     this.posicion = posicion; 
     this.traspasoSolicitado = false;
+    totalJugadores++;
 
 }
 
@@ -55,6 +56,16 @@ public void setTraspasoSolicitado(boolean traspasoSolicitado){
 
 public boolean isTraspasoSolicitado() {
     return traspasoSolicitado;
+}
+
+public void solicitarTraspaso() {
+    this.traspasoSolicitado = true;
+    System.out.println("El jugador " + nombre + " ha solicitado el traspaso.");
+}
+
+public void cancelarTraspaso() {
+    this.traspasoSolicitado = false;
+    System.out.println("El jugador " + nombre + " ha cancelado la solicitud de traspaso.");
 }
 
 
