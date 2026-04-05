@@ -18,6 +18,9 @@ public Entrenador(String nombre, String formacionPreferida) {
      totalEntrenadores++;
 
 }
+public static int getTotalEntrenadores() {
+    return totalEntrenadores;
+}
 
 public String getNombre() {
     return nombre;

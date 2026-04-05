@@ -49,7 +49,12 @@ public class Main {
         j1.solicitarTraspaso();
         eq1.transferirJugador(j1, eq2);
         eq2.verPlantilla();
-        
+
+
+        System.out.println("Total jugadores: " + Jugador.getTotalJugadores());
+        System.out.println("Total entrenadores: " + Entrenador.getTotalEntrenadores());
+        System.out.println("Total equipos: " + Equipo.getTotalEquipos());
+                
 
 
 

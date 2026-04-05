@@ -15,6 +15,10 @@ public class Equipo {
         this.nombre = nombre;
         this.entrenador = null;
         this.jugadores = new ArrayList<Jugador>();
+        totalEquipos++;
+    }
+    public static int getTotalEquipos() {
+    return totalEquipos;
     }
 
     public String getNombre() {

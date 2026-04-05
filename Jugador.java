@@ -24,6 +24,10 @@ public Jugador(String nombre, LocalDate fechaNacimiento, String posicion) {
     this.traspasoSolicitado = false;
     totalJugadores++;
 
+    }
+
+public static int getTotalJugadores() {
+    return totalJugadores;
 }
 
 public String getNombre() {
