@@ -25,4 +25,37 @@ public Jugador(String nombre, LocalDate fechaNacimiento, String posicion) {
 
 }
 
+public String getNombre() {
+    return nombre;
+}
+
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
+
+public LocalDate getFechaNacimiento() {
+    return fechaNacimiento;
+}
+
+public void setFechaNcimiento(LocalDate fechaNacimiento) {
+    this.fechaNacimiento = fechaNacimiento;
+}
+
+public String getPosicion() {
+    return posicion;
+}
+
+public void setPosicion(String posicion) {
+    this.posicion = posicion;
+}
+
+public void setTraspasoSolicitado(boolean traspasoSolicitado){
+    this.traspasoSolicitado = traspasoSolicitado;
+}
+
+public boolean isTraspasoSolicitado() {
+    return traspasoSolicitado;
+}
+
+
 }
