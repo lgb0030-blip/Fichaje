@@ -21,5 +21,7 @@ public String getNombre() {
 
 public void setNombre(String nombre) {
     this.nombre = nombre;
-} 
+}
+
+
 }

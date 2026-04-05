@@ -38,4 +38,22 @@ public void setFormacionPreferida(String formacionPreferida) {
 public static int getTotalEntrenadores() {
     return totalEntrenadores;
 }
+
+/**
+ * Devuelve una representacion legible de los datos del entrenador.
+ * 
+ * @return cadena con la informacion del entrenador.
+ * 
+ */
+
+@Override
+public String toString() {
+    return "Entrenador: " + nombre +
+           " | formacionPreferida: " + formacionPreferida;
+           
+}
+
+
+
+
 }
