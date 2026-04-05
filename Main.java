@@ -23,40 +23,10 @@ public class Main {
         Equipo eq2 = new Equipo("Leones United");
         Equipo eq3 = new Equipo("Nacional NC");
 
-       // Probar toString - Ejercicio 3
-        System.out.println(j1);
-        System.out.println(j2);
-        System.out.println(e1);
-        System.out.println(eq1);
-
-        j1.solicitarTraspaso();
-        j1.cancelarTraspaso();
-
-
-        // Asignar entrenadores y jugadores
+        //asignar entrenadores 
         eq1.setEntrenador(e1);
-        eq1.añadirJugador(j1);
-        eq1.añadirJugador(j2);
-        eq1.añadirJugador(j3);
-
         eq2.setEntrenador(e2);
-        eq2.añadirJugador(j4);
-        eq2.añadirJugador(j5);
-
-        // Probar ejercicio 7
-        System.out.println(eq1);
-        eq1.verPlantilla();
-        j1.solicitarTraspaso();
-        eq1.transferirJugador(j1, eq2);
-        eq2.verPlantilla();
-
-
-        System.out.println("Total jugadores: " + Jugador.getTotalJugadores());
-        System.out.println("Total entrenadores: " + Entrenador.getTotalEntrenadores());
-        System.out.println("Total equipos: " + Equipo.getTotalEquipos());
-                
-
-
+        eq3.setEntrenador(e3);
 
     }
 }
