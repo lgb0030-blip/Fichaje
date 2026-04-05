@@ -6,7 +6,7 @@ public class Jugador {
     private String posicion;
     private boolean traspasoSolicitado;
 
-    private static int totalJugadores;
+    private static int totalJugadores = 0;
     
      /**
       * contructor de la clase jugador. 
@@ -22,7 +22,7 @@ public Jugador(String nombre, LocalDate fechaNacimiento, String posicion) {
     this.fechaNacimiento = fechaNacimiento;
     this.posicion = posicion; 
     this.traspasoSolicitado = false;
-    
+
 }
 
 }
