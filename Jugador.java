@@ -58,4 +58,20 @@ public boolean isTraspasoSolicitado() {
 }
 
 
+/**
+ * devuelve una representacion legible de los del jugador.
+ * 
+ * @return cadena con la informacion del jugador.
+ */
+
+@Override
+public String toString() {
+    return "Jugador: " + nombre +
+           " | Posicion: " + posicion + 
+           " | Nacimiento: " + fechaNacimiento +
+           " | Traspaso: " + traspasoSolicitado;
+        
+}
+
+
 }
