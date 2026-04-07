@@ -18,29 +18,42 @@ public Entrenador(String nombre, String formacionPreferida) {
      totalEntrenadores++;
 
 }
+/**
+ * Total del entrenador instanciado.
+ * @return
+ */
 public static int getTotalEntrenadores() {
     return totalEntrenadores;
 }
-
+/**
+ * Devuelve el nombre del entrenador.
+ * @return nombre del entrenador
+ */
 public String getNombre() {
     return nombre;
 }
-
+/**
+ * Modifica el nombre del entrenador.
+ * @param nombre del entrenador
+ */
 public void setNombre(String nombre) {
     this.nombre = nombre;
 }
-
+/**
+ * Devuelve la formacion preferida del entrenador.
+ * @return Formacion Preferida
+ */
 public String getFormacionPreferida() {
     return formacionPreferida;
 }
-
+/**
+ * Modifica la formacion preferida del entrenador.
+ * @param formacionPreferida
+ */
 public void setFormacionPreferida(String formacionPreferida) {
     this.formacionPreferida = formacionPreferida;
 }
 
-public static int getTotalEntrenadores() {
-    return totalEntrenadores;
-}
 
 /**
  * Devuelve una representacion legible de los datos del entrenador.
