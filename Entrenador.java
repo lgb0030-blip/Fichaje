@@ -1,10 +1,19 @@
+
 /**
  * Clase que representa un entrenador de un equipo.
  */
 public class Entrenador {
-
+/**
+ * Nombre del entrenador.
+ */
     private String nombre;
+    /**
+     * Formacion preferida del entrenador.
+     */
     private String formacionPreferida;
+    /**
+     * Contador total de objetos de entrenador creados.
+     */
 
     private static int totalEntrenadores = 0;
    
@@ -23,7 +32,7 @@ public Entrenador(String nombre, String formacionPreferida) {
 }
 /**
  * Total del entrenador instanciado.
- * @return
+ * @return total de entrenadores creadas.
  */
 public static int getTotalEntrenadores() {
     return totalEntrenadores;
