@@ -1,3 +1,6 @@
+/**
+ * Clase que representa un entrenador de un equipo.
+ */
 public class Entrenador {
 
     private String nombre;

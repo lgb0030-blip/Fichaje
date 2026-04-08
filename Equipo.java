@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-
+/**
+ * Clase que representa un equipo de la liga.
+ */
 public class Equipo {
 
     private String nombre;
@@ -64,7 +66,7 @@ public class Equipo {
         this.entrenador = entrenador;
     }
     /**
-     * Muestra todos los jugadores del equipo.
+     * Muestra todos los jugadores del equipo .
      */
 public void verPlantilla() {
     System.out.println("Plantilla del equipo " + nombre + ":");

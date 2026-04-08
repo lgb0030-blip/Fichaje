@@ -28,7 +28,7 @@ public class Main {
         eq2.setEntrenador(e2);
         eq3.setEntrenador(e3);
 
-        //añadir entrenadores 
+        //añadir jugadores
         eq1.añadirJugador(j1);
         eq1.añadirJugador(j2);
         eq1.añadirJugador(j3);

@@ -1,6 +1,11 @@
 import java.time.LocalDate;
-
+/**
+ * Clase que representa un jugador de la liga.
+ */
 public class Jugador {
+    /**
+     * Nombre del jugador
+     */
     private String nombre;
     private LocalDate fechaNacimiento;
     private String posicion;
