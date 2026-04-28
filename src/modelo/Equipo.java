@@ -1,3 +1,4 @@
+package modelo;
 import java.util.ArrayList;
 
 /**
@@ -109,11 +110,10 @@ public class Equipo {
      * @param destino equipo destino
      */
     public void transferirJugador(Jugador jug, Equipo destino) {
-        if (jugadores.contains(jug) && jug.isTraspasoSolicitado()) {
+        if (jugadores.contains(jug) && jug.getEstadoTraspaso() == EstadoTraspaso.APROBADO_POR_PRESIDENTE) {
             jugadores.remove(jug);
             destino.añadirJugador(jug);
-            jug.setTraspasoSolicitado(false);
-
+            jug.setEstadoTraspaso(EstadoTraspaso.SIN_SOLICITAR);
             System.out.println("Transferencia realizada: " + jug.getNombre() + " pasa de " + this.nombre + " a "
                     + destino.getNombre() + ".");
 

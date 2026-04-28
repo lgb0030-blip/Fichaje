@@ -1,16 +1,16 @@
+package modelo;
+
+import java.time.LocalDate;
 
 /**
  * Clase que representa un entrenador de un equipo.
  */
-public class Entrenador {
-/**
- * Nombre del entrenador.
- */
-    private String nombre;
+public class Entrenador extends Trabajador implements GestorTraspasos {
+
     /**
      * Formacion preferida del entrenador.
      */
-    private String formacionPreferida;
+    private Formacion formacionPreferida;
     /**
      * Contador total de objetos de entrenador creados.
      */
@@ -24,8 +24,8 @@ public class Entrenador {
  * @param formacionPreferida Formacion preferida del entrenador.
  */
 
-public Entrenador(String nombre, String formacionPreferida) {
-    this.nombre = nombre;
+public Entrenador(String nombre, LocalDate fechaNacimiento, String equipo, Formacion formacionPreferida) {
+    super(nombre, fechaNacimiento, equipo);
     this.formacionPreferida = formacionPreferida;
      totalEntrenadores++;
 
@@ -55,14 +55,14 @@ public void setNombre(String nombre) {
  * Devuelve la formacion preferida del entrenador.
  * @return Formacion Preferida
  */
-public String getFormacionPreferida() {
+public Formacion getFormacionPreferida() {
     return formacionPreferida;
 }
 /**
  * Modifica la formacion preferida del entrenador.
  * @param formacionPreferida
  */
-public void setFormacionPreferida(String formacionPreferida) {
+public void setFormacionPreferida(Formacion formacionPreferida) {
     this.formacionPreferida = formacionPreferida;
 }
 
@@ -79,6 +79,22 @@ public String toString() {
     return "Entrenador: " + nombre +
            " | formacionPreferida: " + formacionPreferida;
            
+}
+
+@Override 
+public void aprobarTraspaso(Jugador j){
+    if (mismoEquipo(j) && j.getEstadoTraspaso() == EstadoTraspaso.SOLICITADO){
+        j.setEstadoTraspaso(EstadoTraspaso.APROBADO_POR_ENTRENADOR);
+        System.err.println("Entrenador aprueba el traspaso de " + j.getNombre());
+    }
+}
+
+@Override
+public void rechazarTraspaso(Jugador j) {
+    if (mismoEquipo(j) && j.getEstadoTraspaso() == EstadoTraspaso.SOLICITADO){
+        j.setEstadoTraspaso(EstadoTraspaso.RECHAZADO);
+        System.out.println("Entrenador rechaza el traspaso de " + j.getNombre());
+    }
 }
 
 

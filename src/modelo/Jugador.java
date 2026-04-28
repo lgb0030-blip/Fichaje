@@ -1,25 +1,20 @@
+package modelo;
 import java.time.LocalDate;
 
 /**
  * Clase que representa un jugador de la liga.
  */
-public class Jugador {
-    /**
-     * Nombre del jugador
-     */
-    private String nombre;
-    /**
-     * Fecha del nacimiento del jugador.
-     */
-    private LocalDate fechaNacimiento;
+public class Jugador extends Trabajador {
+    
+   
     /**
      * Posicion en la que juega el jugador.
      */
-    private String posicion;
+    private Posicion posicion;
     /**
      * Indica si el jugador ha solicitado el traspaso.
      */
-    private boolean traspasoSolicitado;
+    private EstadoTraspaso estadoTraspaso;
     /**
      * contador total de objetos creados.
      */
@@ -34,12 +29,10 @@ public class Jugador {
      * @param fechaNacimiento Feche de nacimiento del jugador.
      * @param posicion        Posicion del jugador.
      */
-    public Jugador(String nombre, LocalDate fechaNacimiento, String posicion) {
-
-        this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
+    public Jugador(String nombre, LocalDate fechaNacimiento, String equipo, Posicion posicion) {
+        super(nombre, fechaNacimiento, equipo);
         this.posicion = posicion;
-        this.traspasoSolicitado = false;
+        this.estadoTraspaso = EstadoTraspaso.SIN_SOLICITAR;
         totalJugadores++;
 
     }
@@ -96,7 +89,7 @@ public class Jugador {
      * 
      * @return posicion del jugador
      */
-    public String getPosicion() {
+    public Posicion getPosicion() {
         return posicion;
     }
 
@@ -106,7 +99,7 @@ public class Jugador {
      * @param posicion
      */
 
-    public void setPosicion(String posicion) {
+    public void setPosicion(Posicion posicion) {
         this.posicion = posicion;
     }
 
@@ -115,8 +108,8 @@ public class Jugador {
      * 
      * @param traspasoSolicitado
      */
-    public void setTraspasoSolicitado(boolean traspasoSolicitado) {
-        this.traspasoSolicitado = traspasoSolicitado;
+    public void setEstadoTraspaso(EstadoTraspaso estadoTraspaso) {
+        this.estadoTraspaso = estadoTraspaso;
     }
 
     /**
@@ -124,15 +117,15 @@ public class Jugador {
      * 
      * @return true si ha solicitado traspaso, false en caso contrario.
      */
-    public boolean isTraspasoSolicitado() {
-        return traspasoSolicitado;
+    public EstadoTraspaso getEstadoTraspaso() {
+        return estadoTraspaso;
     }
 
     /**
      * Solicita el traspaso del jugador.
      */
     public void solicitarTraspaso() {
-        this.traspasoSolicitado = true;
+        this.estadoTraspaso = EstadoTraspaso.SOLICITADO;
         System.out.println("El jugador " + nombre + " ha solicitado el traspaso.");
     }
 
@@ -140,7 +133,7 @@ public class Jugador {
      * Cancela la solicitud de traspaso del jugador.
      */
     public void cancelarTraspaso() {
-        this.traspasoSolicitado = false;
+        this.estadoTraspaso = EstadoTraspaso.SIN_SOLICITAR;
         System.out.println("El jugador " + nombre + " ha cancelado la solicitud de traspaso.");
     }
 
@@ -155,7 +148,7 @@ public class Jugador {
         return "Jugador: " + nombre +
                 " | Posicion: " + posicion +
                 " | Nacimiento: " + fechaNacimiento +
-                " | Traspaso: " + traspasoSolicitado;
+                " | Traspaso: " + estadoTraspaso;
 
     }
 
