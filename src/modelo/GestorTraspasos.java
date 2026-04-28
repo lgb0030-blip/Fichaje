@@ -1,6 +1,6 @@
 package modelo;
 
 public interface GestorTraspasos {
-    void aprobarTraspaso(Jugador j);
-    void rechazarTraspaso(Jugador j);
+    public void aprobarTraspaso(Jugador j);
+    public void rechazarTraspaso(Jugador j);
 }

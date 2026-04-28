@@ -29,7 +29,7 @@ public class Jugador extends Trabajador {
      * @param fechaNacimiento Feche de nacimiento del jugador.
      * @param posicion        Posicion del jugador.
      */
-    public Jugador(String nombre, LocalDate fechaNacimiento, String equipo, Posicion posicion) {
+    public Jugador(String nombre, LocalDate fechaNacimiento, Equipo equipo, Posicion posicion) {
         super(nombre, fechaNacimiento, equipo);
         this.posicion = posicion;
         this.estadoTraspaso = EstadoTraspaso.SIN_SOLICITAR;
@@ -47,43 +47,7 @@ public class Jugador extends Trabajador {
         return totalJugadores;
     }
 
-    /**
-     * Devuelve el nombre del jugador.
-     * 
-     * @return nombre del jugador.
-     */
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Nombre nuevo del jugador.
-     * 
-     * @param nombre
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Fecha de nacimiento del jugador.
-     * 
-     * @return nacimiento del jugador.
-     */
-    public LocalDate getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    /**
-     * Nueva fechaNacimiento.
-     * 
-     * @param fechaNacimiento
-     */
-    public void setFechaNcimiento(LocalDate fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
+    
     /**
      * Devuelve la posicion del jugador.
      * 

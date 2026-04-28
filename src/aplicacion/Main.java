@@ -12,25 +12,25 @@ import modelo.Presidente;
 public class Main {
     public static void main(String[] arg) {
 
-        // jugadores
-        Jugador j1 = new Jugador("Ramos", LocalDate.of(1996, 3, 15), "Olimpia OL", Posicion.DEFENSA);
-        Jugador j2 = new Jugador("Vega", LocalDate.of(1998, 7, 21), "Leones United", Posicion.CENTROCAMPISTA);
-        Jugador j3 = new Jugador("Torres", LocalDate.of(2000, 1, 10), "Nacional NC", Posicion.DELANTERO);
-        Jugador j4 = new Jugador("Luna", LocalDate.of(1997, 9, 2), "Olimpia OL", Posicion.PORTERO);
-        Jugador j5 = new Jugador("Navas", LocalDate.of(1999, 12, 5), "Leones United", Posicion.DEFENSA);
-        Jugador j6 = new Jugador("Ruiz", LocalDate.of(2001, 4, 18), "Nacional NC", Posicion.CENTROCAMPISTA);
-        Jugador j7 = new Jugador("Molina", LocalDate.of(1995, 6, 30), "Olimpia OL", Posicion.DELANTERO);
-        Jugador j8 = new Jugador("Santos", LocalDate.of(2002, 11, 8), "Nacional NC", Posicion.DEFENSA);
-
-        // entrenadores
-        Entrenador e1 = new Entrenador("Carlos Martin", LocalDate.of(1970, 1, 1), "Olimpia OL", Formacion.F_4_3_3);
-        Entrenador e2 = new Entrenador("Luis Perez", LocalDate.of(1975, 1, 1), "Leones united", Formacion.F_4_4_2);
-        Entrenador e3 = new Entrenador("mariano Gomez", LocalDate.of(1968, 1, 1), "Nacional NC", Formacion.F_3_5_2);
-
         // equipos
         Equipo eq1 = new Equipo("Olimpia OL");
         Equipo eq2 = new Equipo("Leones United");
         Equipo eq3 = new Equipo("Nacional NC");
+
+        // jugadores
+        Jugador j1 = new Jugador("Ramos", LocalDate.of(1996, 3, 15), eq1, Posicion.DEFENSA);
+        Jugador j2 = new Jugador("Vega", LocalDate.of(1998, 7, 21), eq2, Posicion.CENTROCAMPISTA);
+        Jugador j3 = new Jugador("Torres", LocalDate.of(2000, 1, 10), eq3, Posicion.DELANTERO);
+        Jugador j4 = new Jugador("Luna", LocalDate.of(1997, 9, 2), eq1, Posicion.PORTERO);
+        Jugador j5 = new Jugador("Navas", LocalDate.of(1999, 12, 5), eq2, Posicion.DEFENSA);
+        Jugador j6 = new Jugador("Ruiz", LocalDate.of(2001, 4, 18), eq3, Posicion.CENTROCAMPISTA);
+        Jugador j7 = new Jugador("Molina", LocalDate.of(1995, 6, 30), eq1, Posicion.DELANTERO);
+        Jugador j8 = new Jugador("Santos", LocalDate.of(2002, 11, 8), eq3, Posicion.DEFENSA);
+
+        // entrenadores
+        Entrenador e1 = new Entrenador("Carlos Martin", LocalDate.of(1970, 1, 1), eq1, Formacion.F_4_3_3);
+        Entrenador e2 = new Entrenador("Luis Perez", LocalDate.of(1975, 1, 1), eq2, Formacion.F_4_4_2);
+        Entrenador e3 = new Entrenador("mariano Gomez", LocalDate.of(1968, 1, 1), eq3, Formacion.F_3_5_2);
 
         // asignar entrenadores
         eq1.setEntrenador(e1);
@@ -59,13 +59,12 @@ public class Main {
         System.out.println("Total entrenadores: " + Entrenador.getTotalEntrenadores());
         System.out.println("Total equipos: " + Equipo.getTotalEquipos());
 
+        // crear prsidente
+        Presidente p1 = new Presidente("Juan Garcia", LocalDate.of(1960, 1, 1), eq1);
 
-        //crear prsidente
-        Presidente p1 = new Presidente("Juan Garcia", LocalDate.of(1960, 1, 1), "Olimpia OL");
-
-        j1.solicitarTraspaso();           // SIN_SOLICITAR SOLICITADO
-        e1.aprobarTraspaso(j1);           //SOLICITADO  APROBADO_POR_ENTRENADOR
-        p1.aprobarTraspaso(j1);           //APROBADO_POR_ENTRENADOR   APROBADO_POR_PRESIDENTE
-        eq1.transferirJugador(j1, eq2);   //transferencia
+        j1.solicitarTraspaso(); // SIN_SOLICITAR SOLICITADO
+        e1.aprobarTraspaso(j1); // SOLICITADO APROBADO_POR_ENTRENADOR
+        p1.aprobarTraspaso(j1); // APROBADO_POR_ENTRENADOR APROBADO_POR_PRESIDENTE
+        eq1.transferirJugador(j1, eq2); // transferencia
     }
 }
